@@ -2,60 +2,64 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-const { user } = require("../models/user");
+const user = require("../models/user");
 
 function passwordsMatch(submittedPassword, storedPasswordHash) {
   return bcrypt.compareSync(submittedPassword, storedPasswordHash);
 }
 
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: "email",
-      passwordField: "password",
-    },
-    (email, password, done) => {
-      user.findOne({ where: { email } })
-        .then((user) => {
-          if (!user) {
-            console.log("\n\nFailed Login: user does not exist\n\n");
-            return done(null, false, { message: "Failed Login" });
-          }
+passport.use(new LocalStrategy(user.authenticate()));
 
-          if (passwordsMatch(password, user.passwordHash) === false) {
-            console.log("\n\nFailed Login: passwords did not match\n\n");
-            return done(null, false, { message: "Failed Login" });
-          }
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
+// passport.use(
+//   new LocalStrategy(
+//     {
+//       usernameField: "email",
+//       passwordField: "password",
+//     },
+//     (email, password, done) => {
+//       user.findOne({ where: { email } })
+//         .then((user) => {
+//           if (!user) {
+//             console.log("\n\nFailed Login: user does not exist\n\n");
+//             return done(null, false, { message: "Failed Login" });
+//           }
 
-          console.log("\n\nSuccessful Login\n\n");
-          return done(null, user, { message: "Successfully Logged In!" });
-        })
-        .catch((err) => {
-          return done(err);
-        });
-    }
-  )
-);
+//           if (passwordsMatch(password, user.passwordHash) === false) {
+//             console.log("\n\nFailed Login: passwords did not match\n\n");
+//             return done(null, false, { message: "Failed Login" });
+//           }
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+//           console.log("\n\nSuccessful Login\n\n");
+//           return done(null, user, { message: "Successfully Logged In!" });
+//         })
+//         .catch((err) => {
+//           return done(err);
+//         });
+//     }
+//   )
+// );
 
-passport.deserializeUser((id, done) => {
-  user.findByPk(id)
-    .then((user) => {
-      if (!user) {
-        done(null, false);
-        return;
-      }
+// passport.serializeUser((user, done) => {
+//   done(null, user.id);
+// });
 
-      done(null, user);
-      return;
-    })
-    .catch((err) => done(err, null));
-});
+// passport.deserializeUser((id, done) => {
+//   user.findById(id)
+//     .then((user) => {
+//       if (!user) {
+//         done(null, false);
+//         return;
+//       }
 
-passport.isAuthenticated = () => (req, res, next) =>
-  req.user ? next() : res.sendStatus(401);
+//       done(null, user);
+//       return;
+//     })
+//     .catch((err) => done(err, null));
+// });
+
+// passport.isAuthenticated = () => (req, res, next) =>
+//   req.user ? next() : res.sendStatus(401);
 
 module.exports = passport;

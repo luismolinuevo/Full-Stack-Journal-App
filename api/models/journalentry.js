@@ -12,6 +12,10 @@ const entry = new mongoose.Schema({
     date: {
         type: String,
         required: true,
+    },
+    userId: {
+        type: String,
+        required: true
     }
 })
 

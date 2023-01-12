@@ -16,7 +16,7 @@ router.post("/signup", async (req,res) => {
     await User.save()
     .then((user) => {
         user.password = undefined;
-        req.login(user, () => res.status(201).json(user));
+        // req.login(user, () => res.status(201).json(user));
       })
       .catch((err) => {
         res.status(400).json({ msg: "Failed Signup", err });

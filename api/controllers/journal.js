@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Journal = require("../models/journalentry.js")
 
+//get all entries for a user
 router.get("/", async (req,res) => {
     // const id = req.session._id;
     const id = req.session.user._id;
@@ -11,6 +12,7 @@ router.get("/", async (req,res) => {
     res.json(entry);
 });
 
+//create entry
 router.post("/", async (req,res) => {
     const id = req.session.user._id;
     const {title, entry, date} = req.body;
@@ -25,17 +27,21 @@ router.post("/", async (req,res) => {
       });
 })
 
-router.put("/:id", (req,res) => {
+//edit entry
+router.put("/:id", async (req,res) => {
     const entryId = req.params.id;
-    const journal = Journal.findOneAndUpdate({
-        _id: entryId
-    })
+    const filter = {_id: entryId};
+    const update = { title: req.body.title,entry: req.body.entry, date: req.body.date }
+    const journal = await Journal.findOneAndUpdate(filter, update , {
+        new:true
+    });
 })
 
-router.delete("/:id", (req,res) => {
+//delete entry
+router.delete("/:id", async (req,res) => {
     const entryId = req.params.id;
 
-    Journal.deleteOne({
+    await Journal.deleteOne({
         _id: entryId,
     })
 })

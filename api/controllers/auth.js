@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const passport = require("../middleware/passport-config");
 const user = require("../models/user");
 const bcrypt = require("bcryptjs");
 
@@ -42,7 +41,8 @@ router.post("/login", async (req, res) => {
   if (!user) return res.status(400).send("Invalid email or password");
   const valid = await bcrypt.compare(password, User.password);
   if (!valid) return res.status(400).send("Invalid email or password");
-  req.session.user = User;
+  req.session.user = User;  //uncommenting this fixed the error I had with adding entries.(This opens a session if the data of the user that logged in)
+  // req.session.userId = User._id
   res.send("Logged In");
 });
 

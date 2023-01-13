@@ -1,7 +1,7 @@
 const dotenv = require('dotenv').config()  
 const express = require("express");
 const expressSession = require("express-session");
-const passport = require("./middleware/passport-config.js");
+// const passport = require("./middleware/passport-config.js");
 const cors = require("cors");
 const app = express();
 const mongoose = require('mongoose');

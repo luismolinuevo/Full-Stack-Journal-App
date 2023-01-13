@@ -14,9 +14,10 @@ const entry = new mongoose.Schema({
         required: true,
     },
     userId: {
-        type: String,
-        required: true
-    }
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: 'User'
+    },
 })
 
 module.exports = mongoose.model("Entry", entry)

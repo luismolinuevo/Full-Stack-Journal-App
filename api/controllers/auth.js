@@ -6,11 +6,6 @@ router.post("/signup", async (req,res) => {
     const { name, email, password } = req.body;
     console.log("POST body: ", req.body);
     const hashedPassword = await bcrypt.hash(password, 10);
-    // await user.create({
-    //     name: name,
-    //     email: email,
-    //     password: hashedPassword,
-    // })
     const User = new user({ name, email, password: hashedPassword });
     await User.save()
     .then((user) => {
@@ -22,18 +17,6 @@ router.post("/signup", async (req,res) => {
       });
 })
 
-
-// router.post("/login", passport.authenticate("local"), (req, res) => {
-//   res.json(req.user);
-// });
-
-// router.get("/login", (req, res) => {
-//   if (req.user) {   
-//     res.json(req.user);
-//   } else {
-//     res.sendStatus(401);
-//   }
-// });
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;

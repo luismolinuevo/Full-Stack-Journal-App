@@ -8,11 +8,12 @@ const mongoose = require('mongoose');
 const dbPort = process.env.DB_PORT;
 const frontEnd = process.env.FRONTEND_URL;
 const secret = process.env.SESSION_SECRET;
+const db = process.env.DB;
 
 //connects mongoose to mongodb database
 mongoose.set("strictQuery", false);
-mongoose.connect('mongodb+srv://journal_db:JYss2vyRHWmX5kgQ@cluster0.acby7fn.mongodb.net/journal_db', () => {  //this is url is from my cluster that I connected from the cloud to my pc
-    useNewUrlParser: true;
+mongoose.connect(db, () => {  //this is url is from my cluster that I connected from the cloud to my pc
+    // useNewUrlParser: true;
     console.log("Connected to MongoDB");
 });
 

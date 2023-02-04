@@ -12,6 +12,8 @@ import './App.css'
 
 import Layout from "./components/Layout";
 import Home from "./Pages/Home"
+import LoginPage from "./Pages/Login/Login.jsx";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
 
@@ -27,34 +29,21 @@ function App() {
             //   return getDailyImage();
             // }
           },
-          // {
-          //   path: "/dailyimage",
-          //   element: <DailyImage/>,
-          //   loader: () => {
-          //     return getDailyImage();
-          //   }
-          // },
-          // {
-          //   path: "/mars",
-          //   element: <Mars/>,
-          //   loader: () => {
-          //      return getMarsImages();
-          //   }
-          // },
-          // {
-          //   path: "nasaimages",
-          //   element: <NasaImages/>,
-          //   // loader: () => {
-          //   //   // return searchImages();
-          //   // }
-          // }
+
         ]
+      },
+      {
+        path: "/login",
+        element: <LoginPage/>
       },
   ]);
 
   return (
     <div className="App">
-      <RouterProvider router={router}/>
+      <AuthProvider>
+        <RouterProvider router={router}/>
+      </AuthProvider>
+      
     </div>
   )
 }

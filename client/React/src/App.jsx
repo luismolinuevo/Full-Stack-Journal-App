@@ -14,6 +14,7 @@ import Layout from "./components/Layout";
 import Home from "./Pages/Home"
 import LoginPage from "./Pages/Login/Login.jsx";
 import { AuthProvider } from "./context/AuthContext";
+import { Signup } from "./Pages/Signup/Signup";
 
 function App() {
 
@@ -35,6 +36,10 @@ function App() {
       {
         path: "/login",
         element: <LoginPage/>
+      },
+      {
+        path: "signup",
+        element: <Signup/>
       },
   ]);
 

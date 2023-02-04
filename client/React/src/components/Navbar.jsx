@@ -30,12 +30,8 @@ export default function Navbar() {
                   <div className = "navbar">
                       {/* <h1 className = "logo">Moli<span className ="accent">nuevo</span></h1> */}
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
-                          {/* <a href='#home' onClick={handleClick}>Home</a>
-                          <a href='#skills' onClick={handleClick}>Skills</a>
-                          <a href='/#projects' onClick={handleClick}>Projects</a>
-                          <a href='/#' onClick={handleClick}>Resume</a>
-                          <a href='#contact-me' className ="contact-button" onClick={handleClick}>Contact Me</a> */}
                           <Link to="/home" onClick={handleClick}>Home</Link>
+                          <Link to="login" onClick={handleClick}>Login/Signup</Link>
                           <button className="nav-btn nav-close-btn" onClick={() => {
                               setExpandNavbar((prev) => !prev);
                            }}> 

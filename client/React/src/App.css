@@ -1,3 +1,20 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/* font-family: "Titillium Web", sans-serif; */
+}
+
+body {
+	/* background-color: #F2F2F2; */
+    background-color: #B2BEBF;
+}
+
+.container {
+	width: 100%;
+	padding: 0px 80px;
+}
+
 .heading {
     text-align: center;
     font-size: 30px;

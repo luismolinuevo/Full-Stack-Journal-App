@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/Bs";
 import "./CreateEntries.css"
+import { useNavigate } from "react-router-dom";
 
 
 export default function CreateEntrie() {
@@ -10,14 +11,10 @@ export default function CreateEntrie() {
     const [explainMood, setExplainMood] = useState("");
     const [whatHappened, setWhatHappened] = useState("");
 
-    // const[isHappy, setIsHappy] = useState(false);
-    // const[isInLove, setInLove] = useState(false);
-    // const[isMeh, setIsMeh] = useState(false);
-    // const[isSad, setIsSad] = useState(false);
-    // const[isMad, setIsMad] = useState(false);
+    const navigate = useNavigate();
 
     const moodHandler = (emotion) => { //emotion could be "happy", "sad", "rad", etc
-        const moodFound = mood.includes(emotion);
+        const moodFound = mood.includes(emotion);  
         if(!moodFound) {
             setMood([...mood, emotion]);
             console.log("added");
@@ -29,9 +26,31 @@ export default function CreateEntrie() {
         console.log(mood);
     }
 
-    const sumbitForm = () => {
+    const sumbitForm = async (event) => {
+        event.preventDefault();
+        let response = await fetch(import.meta.env.VITE_CREATE_ENTRIE, {
+            method: "POST",
+            credentials: "include",
+            headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            title: title,
+            entry: whatHappened,
+            date: date,
+            mood: mood,
+            moodExplained: explainMood,
+        }),
+      }).then((navigate(`/entries`)))
 
-    }
+      if (response.ok) {
+        // setSuccess(true);
+        console.log("work")
+      } else {
+        // setError(true);
+        console.log("didnt work")
+      }
+    };
 
   return (
     <div>
@@ -73,19 +92,21 @@ export default function CreateEntrie() {
                 
             </div>
         </div>
-        <div className='titleContainer'>
-            <h1>Title:</h1>
-            <input type="text" value={title} placeholder="Enter title"  onChange={event => {title(event.target.value)}}/>
-        </div>
-        <div>
-            <h1>Explain your mood</h1>
-            <textarea type="text" value={explainMood} placeholder='Explain your selected mood'  onChange={event => {explainMood(event.target.value)}}/>
-        </div>
-        <div>
-            <h1>What happened Today?</h1>
-            <textarea type="text" value={whatHappened} placeholder='What happened Today?'  onChange={event => {whatHappened(event.target.value)}}/>
-        </div>
-        <input type="submit" onClick={sumbitForm}/>
+        <form onSubmit={sumbitForm}>
+            <div className='titleContainer'>
+                <h1>Title:</h1>
+                <input type="text" value={title} placeholder="Enter title"  onChange={event => {setTitle(event.target.value)}} autoFocus/>
+            </div>
+            <div>
+                <h1>Explain your mood</h1>
+                <textarea type="text" value={explainMood} placeholder='Explain your selected mood'  onChange={event => {setExplainMood(event.target.value)}}/>
+            </div>
+            <div>
+                <h1>What happened Today?</h1>
+                <textarea type="text" value={whatHappened} placeholder='What happened Today?'  onChange={event => {setWhatHappened(event.target.value)}}/>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </div>
   )
 }

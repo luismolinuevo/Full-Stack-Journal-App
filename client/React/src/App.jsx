@@ -35,6 +35,9 @@ function App() {
             path: "/createentrie",
             element: <CreateEntrie/>
           },
+          {
+            path: "/entries",
+          }
 
         ]
       },

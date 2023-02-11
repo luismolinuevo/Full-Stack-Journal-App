@@ -17,6 +17,10 @@ const entry = new mongoose.Schema({
         type: [String],
         required: true,
     },
+    moodExplained: {
+        type: String,
+        required: false,
+    },
     userId: {
         type: mongoose.Types.ObjectId,
         required: true,

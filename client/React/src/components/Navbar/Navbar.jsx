@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'   //rafce is the short cut
 import {FaBars, FaTimes} from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import "../styles/Navstyles.css"
+import "./Navstyles.css"
 
 export default function Navbar() {
   const [expandNavbar, setExpandNavbar] = useState(false);
@@ -30,6 +30,7 @@ export default function Navbar() {
                   <div className = "navbar">
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
                           <Link to="/home" onClick={handleClick}>Home</Link>
+                          <Link to="/home" onClick={handleClick}>Entries</Link>
                           <Link to="login" onClick={handleClick}>Login/Signup</Link>
                           <button className="nav-btn nav-close-btn" onClick={() => {
                               setExpandNavbar((prev) => !prev);

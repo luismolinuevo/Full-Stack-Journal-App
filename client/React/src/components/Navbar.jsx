@@ -28,7 +28,6 @@ export default function Navbar() {
           <header className = {navbar ? "active" : " "}>
               <div className = "container">
                   <div className = "navbar">
-                      {/* <h1 className = "logo">Moli<span className ="accent">nuevo</span></h1> */}
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
                           <Link to="/home" onClick={handleClick}>Home</Link>
                           <Link to="login" onClick={handleClick}>Login/Signup</Link>

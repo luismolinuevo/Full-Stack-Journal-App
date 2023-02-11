@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
           credentials: "include",
         })   
       
-        if (!response.ok) { 
+        if (!response.ok) {  //may have to change this
           throw new Error("Unauthenticated");    //if its not ok it will throw an error
         }
 
@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
     });
-    if (!response.ok) {
+    if (!response.ok) {  //may have to change this
       throw new Error("Logout Failed");
     }
 

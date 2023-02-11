@@ -1,0 +1,41 @@
+.topHalf {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.datePicker {
+    padding-top: 7px
+}
+
+.moodPicker {
+    display: flex;
+    
+}
+
+.moodEmjois {
+    display: flex;
+    
+}
+
+.moods {
+    /* padding-left: 10px; */
+    margin-left: 10px;
+    text-align: center;
+}
+
+.moods button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.titleContainer {
+    display: flex;
+}
+
+.selected {
+   border: 2px solid black;
+   text-align: center;
+}

@@ -4,6 +4,7 @@ const expressSession = require("express-session");
 const cors = require("cors");
 const app = express();
 const mongoose = require('mongoose');
+const morgan = require("morgan");
 
 const dbPort = process.env.DB_PORT;
 const frontEnd = process.env.FRONTEND_URL;
@@ -19,6 +20,7 @@ mongoose.connect(db, () => {  //this is url is from my cluster that I connected 
 
 
 app.use(express.json());
+app.use(morgan('tiny'));
 
 //middlewares
 app.use(     //protects from attacks. And makes things safer.

@@ -15,6 +15,7 @@ import Home from "./Pages/Home"
 import LoginPage from "./Pages/Login/Login.jsx";
 import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./Pages/Signup/Signup";
+import CreateEntrie from "./Pages/Entries/CreateEntrie";
 
 function App() {
 
@@ -30,6 +31,13 @@ function App() {
             //   return getDailyImage();
             // }
           },
+          {
+            path: "/createentrie",
+            element: <CreateEntrie/>
+          },
+          {
+            path: "/entries",
+          }
 
         ]
       },

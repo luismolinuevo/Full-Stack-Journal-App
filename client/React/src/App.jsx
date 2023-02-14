@@ -11,7 +11,7 @@ import {
 import './App.css'
 
 import Layout from "./components/Layout";
-import Home from "./Pages/Home"
+import Home from "./Pages/Home/Home.jsx"
 import LoginPage from "./Pages/Login/Login.jsx";
 import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./Pages/Signup/Signup";

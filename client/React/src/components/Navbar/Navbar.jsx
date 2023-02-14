@@ -29,7 +29,7 @@ export default function Navbar() {
               <div className = "container">
                   <div className = "navbar">
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
-                          <Link to="/home" onClick={handleClick}>Home</Link>
+                          <Link to="/" onClick={handleClick}>Home</Link>
                           <Link to="/createentrie" onClick={handleClick}>Entries</Link>
                           <Link to="login" onClick={handleClick}>Login/Signup</Link>
                           <button className="nav-btn nav-close-btn" onClick={() => {

@@ -20,7 +20,7 @@ export default function CreateEntrie() {
             console.log("added");
 
         } else {
-            setMood(mood.filter(word => word !== emotion));
+            setMood(mood.filter(word => word !== emotion));  //needs more testing
             console.log("removed")
         }
         console.log(mood);

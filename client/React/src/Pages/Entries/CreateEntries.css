@@ -1,11 +1,12 @@
 .topHalf {
     display: flex;
     justify-content: space-between;
-    
+    padding: 15px 0px;
 }
 
 .datePicker {
-    padding-top: 7px
+    padding-top: 7px;
+    display: flex;
 }
 
 .moodPicker {
@@ -15,7 +16,10 @@
 
 .moodEmjois {
     display: flex;
-    
+}
+
+.moodEmjois p {
+    font-family: 'Solitreo', cursive;
 }
 
 .moods {
@@ -33,9 +37,41 @@
 
 .titleContainer {
     display: flex;
+    justify-content: center;
+    
 }
 
 .selected {
    border: 2px solid black;
    text-align: center;
+   
+}
+
+.bottomHalf {
+    text-align: center;
+}
+
+.explainMood {
+    width: 275px;
+    height: 100px;
+    border-radius: 8px;
+    font-family: 'Solitreo', cursive;
+    border: none;
+}
+
+.whatHappened {
+    width: 275px;
+    height: 100px;
+    border-radius: 8px;
+    font-family: 'Solitreo', cursive;
+    border: none;
+}
+
+.inputBox {
+    border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Solitreo', cursive;
 }

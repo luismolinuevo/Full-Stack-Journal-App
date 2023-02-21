@@ -54,59 +54,62 @@ export default function CreateEntrie() {
 
   return (
     <div>
-        <h1 className='heading'>Create Entrie</h1>
-        <div className='topHalf'>
-            <div className='datePicker'>
-                <input type="date" 
-                value={date}
-                onChange={event => {setDate(event.target.value)}}
-                />
-            </div>
-            <div className="moodPicker">
-                <h1>Mood:</h1>
-                <div className='moodEmjois'>
-                    <div className = {mood.includes("rad") ? "moods selected" : "moods"}>
-                        <button onClick={() => moodHandler("rad")}
-                        >
-                            <BsEmojiSmile/>
-                        </button>
-                        <p>rad</p>
-                    </div>
-                    <div className = {mood.includes("love") ? "moods selected" : "moods"}>
-                        <button onClick={() => moodHandler("love")}><BsEmojiHeartEyes/></button> 
-                        <p>love</p>
-                    </div>
-                    <div className = {mood.includes("meh") ? "moods selected" : "moods"}>
-                        <button onClick={() => moodHandler("meh")}><BsEmojiNeutral/></button>
-                        <p>meh</p>
-                    </div>
-                    <div className = {mood.includes("sad") ? "moods selected" : "moods"}>
-                        <button onClick={() => moodHandler("sad")}><BsEmojiFrown/></button> 
-                        <p>sad</p>
-                    </div>
-                    <div className = {mood.includes("mad") ? "moods selected" : "moods"}>
-                        <button onClick={() => moodHandler("mad")}><BsEmojiAngry/></button> 
-                        <p>mad</p>
+        <div className='container'>
+            <h1 className='heading'>Create Entrie</h1>
+            <div className='topHalf'>
+                <div className='datePicker'>
+                    <h1>Date:</h1>
+                    <input type="date" 
+                    value={date}
+                    onChange={event => {setDate(event.target.value)}}
+                    className = "inputBox"
+                    />
+                </div>
+                <div className="moodPicker">
+                    <h1>Mood:</h1>
+                    <div className='moodEmjois'>
+                        <div className = {mood.includes("rad") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("rad")}
+                            >
+                                <BsEmojiSmile/>
+                            </button>
+                            <p>rad</p>
+                        </div>
+                        <div className = {mood.includes("love") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("love")}><BsEmojiHeartEyes/></button> 
+                            <p>love</p>
+                        </div>
+                        <div className = {mood.includes("meh") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("meh")}><BsEmojiNeutral/></button>
+                            <p>meh</p>
+                        </div>
+                        <div className = {mood.includes("sad") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("sad")}><BsEmojiFrown/></button> 
+                            <p>sad</p>
+                        </div>
+                        <div className = {mood.includes("mad") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("mad")}><BsEmojiAngry/></button> 
+                            <p>mad</p>
+                        </div>
                     </div>
                 </div>
-                
+                <div className='titleContainer'>
+                    <h1 className="titleHeading">Title:</h1>
+                    <input type="text" value={title} placeholder="Enter title"  className = "inputBox" onChange={event => {setTitle(event.target.value)}} autoFocus/>
+                </div>
             </div>
+            <form onSubmit={sumbitForm} className="bottomHalf">
+                <div>
+                    <h1>Explain your mood</h1>
+                    <textarea type="text" value={explainMood} placeholder='Explain your selected mood' className='explainMood' onChange={event => {setExplainMood(event.target.value)}}/>
+                </div>
+                <div>
+                    <h1>What happened Today?</h1>
+                    <textarea type="text" value={whatHappened} placeholder='What happened Today?' className='whatHappened' onChange={event => {setWhatHappened(event.target.value)}}/>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        <form onSubmit={sumbitForm}>
-            <div className='titleContainer'>
-                <h1>Title:</h1>
-                <input type="text" value={title} placeholder="Enter title"  onChange={event => {setTitle(event.target.value)}} autoFocus/>
-            </div>
-            <div>
-                <h1>Explain your mood</h1>
-                <textarea type="text" value={explainMood} placeholder='Explain your selected mood'  onChange={event => {setExplainMood(event.target.value)}}/>
-            </div>
-            <div>
-                <h1>What happened Today?</h1>
-                <textarea type="text" value={whatHappened} placeholder='What happened Today?'  onChange={event => {setWhatHappened(event.target.value)}}/>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
     </div>
   )
 }

@@ -6,11 +6,13 @@
 
 .datePicker {
     padding-top: 7px;
-    display: flex;
+    /* display: flex; */
+    text-align: center;
 }
 
 .moodPicker {
-    display: flex;
+    /* display: flex; */
+    text-align: center;
     
 }
 
@@ -36,8 +38,10 @@
 }
 
 .titleContainer {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+
     
 }
 
@@ -53,7 +57,7 @@
 
 .explainMood {
     width: 275px;
-    height: 100px;
+    height: 80px;
     border-radius: 8px;
     font-family: 'Solitreo', cursive;
     border: none;
@@ -61,7 +65,7 @@
 
 .whatHappened {
     width: 275px;
-    height: 100px;
+    height: 80px;
     border-radius: 8px;
     font-family: 'Solitreo', cursive;
     border: none;
@@ -71,7 +75,20 @@
     border-radius: 8px;
     border: none;
     width: 100px;
-    height: 40px;
+    height: 35px;
     text-align: center;
     font-family: 'Solitreo', cursive;
+}
+
+.entrieHeading {
+    font-size: 23px;
+    padding-bottom: 5px;
+}
+
+.submitButton {
+    background:#800020;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 8px;
 }

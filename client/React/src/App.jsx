@@ -16,6 +16,7 @@ import LoginPage from "./Pages/Login/Login.jsx";
 import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./Pages/Signup/Signup";
 import CreateEntrie from "./Pages/Entries/CreateEntrie";
+import ShowEntries from "./Pages/Entries/ShowEntries";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
           },
           {
             path: "/entries",
+            element: <ShowEntries/>
           }
 
         ]

@@ -12,6 +12,26 @@ router.get("/", async (req,res) => {
     res.status(200).json(entry);
 });
 
+router.get("/:id", async (req,res) => {
+    try {
+        const id = req.params.id;
+        const userid = req.session.user._id;
+        const entry = await Journal.find({
+            _id: id, //took where of and it worked. May not need it.
+            userId: userid
+        });
+        res.status(200).json({
+            // success: true,
+            entry: entry
+        });
+    } catch {
+        console.log("error");
+    }
+    
+});
+
+
+
 //create entry
 router.post("/", async (req,res) => {
     const id = req.session.user._id;

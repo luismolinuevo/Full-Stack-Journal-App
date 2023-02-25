@@ -17,6 +17,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { Signup } from "./Pages/Signup/Signup";
 import CreateEntrie from "./Pages/Entries/CreateEntrie";
 import ShowEntries from "./Pages/Entries/ShowEntries";
+import SpecEntrie from "./Pages/Entries/SpecEntrie";
 
 function App() {
 
@@ -39,6 +40,10 @@ function App() {
           {
             path: "/entries",
             element: <ShowEntries/>
+          },
+          {
+            path: "entries/:id",
+            element: <SpecEntrie/>
           }
 
         ]

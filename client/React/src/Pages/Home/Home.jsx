@@ -8,7 +8,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const login = async (e) => {
-    let email = "test1@gmail.com"
+    let email = "testjose@gmail.com"
     let password = "Luis111"
     e.preventDefault();
     // let { email, password } = data;    //makes email and password variable the email and password that is in the data state           

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import Entries from './Entries';
+import "../Entries/ShowEntries.css"
 
 export default function ShowEntries() {
     const [entries, setEntries] = useState([]);
@@ -31,7 +33,7 @@ export default function ShowEntries() {
         };
       }, []);
 
-      const keys = ["first_name", "last_name", "email"];
+      const keys = ["title", "date"];
       const search = (data) => {
           return data.filter((item) =>
             keys.some((key) => item[key].toLowerCase().includes(query))
@@ -40,7 +42,19 @@ export default function ShowEntries() {
   
   return (
     <div>
-
+      <div className='container'>
+        <div className='searchBarContainer'>
+          <input 
+            type="search" 
+            className='searchBar' 
+            placeholder='Search by title or date' 
+            onChange={(e) => setQuery(e.target.value.toLowerCase())} 
+            />  
+        </div>
+      </div>
+      <div>
+        <Entries data={search(entries)}/>
+      </div>
     </div>
   )
 }

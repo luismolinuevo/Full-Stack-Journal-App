@@ -1,0 +1,41 @@
+.cardContainer {
+    display: flex;
+    padding: 40px 100px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 8px;
+    border: 1px solid #800020;
+}
+
+.cardInfo {
+    padding: 10px;
+}
+
+.cardInfo h1 {
+    font-size: 35px;
+}
+
+.cardInfo h3 {
+    padding: 5px 0px;
+    font-size: 22px;
+}
+
+.cardInfo p {
+    font-size: 18px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.cardInfo a{
+    text-decoration: none;
+    border: 1px solid #800020;
+    background-color: #800020;
+    color: white;
+    padding: 5px;
+}

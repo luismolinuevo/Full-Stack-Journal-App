@@ -47,7 +47,7 @@ export default function ShowEntries() {
           <input 
             type="search" 
             className='searchBar' 
-            placeholder='Search by title or date' 
+            placeholder='Search by title or date(YYYY-D-M)' 
             onChange={(e) => setQuery(e.target.value.toLowerCase())} 
             />  
         </div>

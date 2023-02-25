@@ -30,7 +30,8 @@ export default function Navbar() {
                   <div className = "navbar">
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
                           <Link to="/" onClick={handleClick}>Home</Link>
-                          <Link to="/createentrie" onClick={handleClick}>Entries</Link>
+                          <Link to="/createentrie" onClick={handleClick}>Create Entry</Link>
+                          <Link to="/entries" onClick={handleClick}>Entries</Link>
                           <Link to="login" onClick={handleClick}>Login/Signup</Link>
                           <button className="nav-btn nav-close-btn" onClick={() => {
                               setExpandNavbar((prev) => !prev);

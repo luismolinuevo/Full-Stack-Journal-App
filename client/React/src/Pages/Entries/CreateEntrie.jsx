@@ -68,27 +68,27 @@ export default function CreateEntrie() {
                 <div className="moodPicker">
                     <h1 className='entrieHeading'>Mood:</h1>
                     <div className='moodEmjois'>
-                        <div className = {mood.includes("rad") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("rad")}
+                        <div className = {mood.includes("rad ") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("rad ")}
                             >
                                 <BsEmojiSmile/>
                             </button>
                             <p>rad</p>
                         </div>
-                        <div className = {mood.includes("love") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("love")}><BsEmojiHeartEyes/></button> 
+                        <div className = {mood.includes("love ") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("love ")}><BsEmojiHeartEyes/></button> 
                             <p>love</p>
                         </div>
-                        <div className = {mood.includes("meh") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("meh")}><BsEmojiNeutral/></button>
+                        <div className = {mood.includes("meh ") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("meh ")}><BsEmojiNeutral/></button>
                             <p>meh</p>
                         </div>
-                        <div className = {mood.includes("sad") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("sad")}><BsEmojiFrown/></button> 
+                        <div className = {mood.includes("sad ") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("sad ")}><BsEmojiFrown/></button> 
                             <p>sad</p>
                         </div>
-                        <div className = {mood.includes("mad") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("mad")}><BsEmojiAngry/></button> 
+                        <div className = {mood.includes("mad ") ? "moods selected" : "moods"}>
+                            <button onClick={() => moodHandler("mad ")}><BsEmojiAngry/></button> 
                             <p>mad</p>
                         </div>
                     </div>

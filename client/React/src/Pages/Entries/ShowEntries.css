@@ -8,7 +8,7 @@
     width: 350px;
     padding: 5px;
     border-radius: 5px;
-    /* border: 2px solid #800020; */
+    border: none;
     outline: none;
     font-size: 20px
 }

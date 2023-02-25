@@ -1,5 +1,6 @@
-import { useState, useEffect }from 'react'
+import { useState, useEffect }from 'react';
 import { useParams } from 'react-router-dom';
+import "../Entries/SpecEntrie.css"
 
 export default function SpecEntrie() {
     const [entrieData, setEntrieData] = useState([]);
@@ -38,15 +39,31 @@ export default function SpecEntrie() {
 
   return (
     <div>
-        <div>
+        <div className='container'>
             {
             entrieData && entrieData.length >= 1 ?  entrieData.map((data) => (
-              <p>{data.title}</p>
+              <div className='specEntrieContainer'>
+                <h1 className='heading'>{data.title}</h1>
+                <div className='dateandmood'>
+                  <p>{data.date}</p>
+                  <p>{data.mood}</p>
+                </div>
+                <div className='explainedandentry'>
+                  <div className='explained'>
+                    <h1>My mood Explained</h1>
+                    <p>{data.moodExplained}</p>
+                  </div>
+                  <div className='entry'>
+                    <h1>What happened this day</h1>
+                    <p>{data.entry}</p>
+                  </div>
+                </div>
+              </div>
             )
               
             ) 
             : 
-            (<p>failed</p>)
+            (<p>Failed to get data</p>)
         }
         </div>
         

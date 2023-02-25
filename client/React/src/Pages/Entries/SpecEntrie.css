@@ -1,0 +1,29 @@
+.specEntrieContainer {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.dateandmood {
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+}
+
+.explainedandentry {
+    padding-top: 60px;
+}
+
+.explained h1, .entry h1 {
+    font-size: 35px;
+    padding: 20px 0px;
+}
+
+.explained p, .entry p {
+    border: 2px solid #800020;
+    width: 650px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 40px;
+    font-family: 'Solitreo', cursive;
+    word-break: break-all;
+}

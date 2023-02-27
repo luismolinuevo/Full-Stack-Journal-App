@@ -1,25 +1,34 @@
 .topHalf {
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-evenly;
+    padding: 15px 0px;
 }
 
 .datePicker {
-    padding-top: 7px
+    padding-top: 7px;
+    text-align: center;
+}
+
+.datePicker input {
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
 }
 
 .moodPicker {
-    display: flex;
-    
+    text-align: center;
 }
 
 .moodEmjois {
     display: flex;
-    
+}
+
+.moodEmjois p {
+    font-family: 'Solitreo', cursive;
+    font-size: 25px;
 }
 
 .moods {
-    /* padding-left: 10px; */
     margin-left: 10px;
     text-align: center;
 }
@@ -31,11 +40,66 @@
     text-align: center;
 }
 
+.moodButton {
+    font-size: 40px;
+}
+
 .titleContainer {
-    display: flex;
+    text-align: center;
+}
+
+.titleContainer input {
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
 }
 
 .selected {
    border: 2px solid black;
    text-align: center;
+   
+}
+
+.bottomHalf {
+    text-align: center;
+}
+
+.textarea {
+    width: 600px;
+    height: 200px;
+    border-radius: 8px;
+    font-family: 'Solitreo', cursive;
+    border: 1px solid #800020;
+    font-size: 25px;
+}
+
+.inputBox {
+    border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    font-family: 'Solitreo', cursive;
+}
+
+.entrieHeading {
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+
+.entrieHeading2 {
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+
+.submitButton {
+    background:#800020;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    font-size: 15px;
+    border-radius: 8px;
 }

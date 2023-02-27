@@ -3,9 +3,9 @@ import { Formik, Form } from 'formik';
 import { TextField } from "../../components/TextField";
 import * as Yup from 'yup';
 import Axios from "axios";
-import {Box} from "@mui/system";
+// import {Box} from "@mui/system";
 import './Signup.css';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ export const Signup = () => {
       .required('Confirm password is required'),
   })
   return (
-    <div className='container'>
+    // <div className='container'>
       
         <Formik
           initialValues={{
@@ -53,30 +53,28 @@ export const Signup = () => {
             <div>
               <div className='signupForm'>
                 <Form className="form">
-                    <Box sx={{display: 'flex',
-                        justifyContent: 'space-between',
-                    }}>
-                    <Box>
-                        <TextField label="name" name="name" type="name"/>
-                        <TextField label="Email" name="email" type="email" />
-                        <TextField label="Password" name="password" type="password" />
-                        <TextField label="Confirm Password" name="confirmPassword" type="password" />
-                    </Box>
-                        </Box>
-                    <Box sx={{display: 'flex',                             
-                        justifyContent: 'space-between',
-                        
-                    }}>
-                        <button className ="signup-button" type="submit">Register</button>
-                        <button className ="signup-button" type="reset">Reset</button>
-                    </Box>
+                  <h1>Sign Up</h1>
+                    <div className='inputBoxes'>
+                        <TextField label="Full Name" name="name" type="name" className="label"/>
+                        <TextField label="Email" name="email" type="email" className="label"/>
+                        <TextField label="Password" name="password" type="password" className="label"/>
+                        <TextField label="Confirm Password" name="confirmPassword" type="password" className="label"/>
+                    </div>
+                    <div className='signUpButtons'>
+                      <button className ="signup-button" type="submit">Register</button>
+                      <button className ="signup-button" type="reset">Reset</button>
+                    </div>
+                    <p>Already have an account</p>
+                    <Link to="/login">Sign In</Link>
+
+
                 </Form>
               </div>
             </div>
           )}
         </Formik>
       
-    </div>
+    // </div>
     
   )
 }

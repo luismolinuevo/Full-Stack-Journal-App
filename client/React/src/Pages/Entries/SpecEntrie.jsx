@@ -44,7 +44,7 @@ export default function SpecEntrie() {
           headers: {
           "Content-Type": "application/json",
           },
-        }).then(navigate(`/workouts`))
+        }).then(navigate(`/entries`))
         if (response.ok) {
           console("Entry deleted")
         } else {

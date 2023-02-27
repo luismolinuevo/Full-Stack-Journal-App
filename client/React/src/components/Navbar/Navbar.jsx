@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'   //rafce is the short cut
 import {FaBars, FaTimes} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import AuthButton from '../AuthButton.jsx';
 import "./Navstyles.css"
 
 export default function Navbar() {
@@ -30,9 +31,10 @@ export default function Navbar() {
                   <div className = "navbar">
                       <nav className={expandNavbar ? "responsive_nav" : " "}>
                           <Link to="/" onClick={handleClick}>Home</Link>
-                          <Link to="/createentrie" onClick={handleClick}>Create Entry</Link>
+                          <Link to="/createentry" onClick={handleClick}>Create Entry</Link>
                           <Link to="/entries" onClick={handleClick}>Entries</Link>
-                          <Link to="login" onClick={handleClick}>Login/Signup</Link>
+                          {/* <Link to="login" onClick={handleClick}>Login/Signup</Link> */}
+                          <AuthButton onClick={handleClick}/>
                           <button className="nav-btn nav-close-btn" onClick={() => {
                               setExpandNavbar((prev) => !prev);
                            }}> 

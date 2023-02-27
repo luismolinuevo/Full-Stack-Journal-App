@@ -34,7 +34,7 @@ function App() {
             // }
           },
           {
-            path: "/createentrie",
+            path: "/createentry",
             element: <CreateEntrie/>
           },
           {

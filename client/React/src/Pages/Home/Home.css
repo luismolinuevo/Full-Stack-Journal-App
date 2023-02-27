@@ -16,6 +16,10 @@
     font-size: 25px;
 }
 
+.homeButtons {
+    padding:20px;
+}
+
 .getStarted {
     margin-right: 8px;
     text-decoration: none;
@@ -23,6 +27,7 @@
     border: 1px solid #800020;
     background: #800020;
     padding: 15px;
+    font-weight: bold;
 }
 
 .demoButton {
@@ -30,4 +35,17 @@
     padding: 17px;
     cursor: pointer;
     margin: auto;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.viewEntries {
+    border: 1px solid #800020;
+    padding: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    font-weight: bold;
 }

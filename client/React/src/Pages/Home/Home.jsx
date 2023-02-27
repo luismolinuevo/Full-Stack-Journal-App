@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css"
 
@@ -34,8 +34,22 @@ export default function Home() {
               Allowing for better day to day reflection and expressing your emotions with a couple clicks.
             </p>
             <div className="homeButtons">
-              <Link to={"/signup"} className="getStarted">Get Started!</Link>
-              <button onClick={login} className="demoButton">Demo App</button>
+              {
+                !auth.isAuthenticated 
+                
+                ? 
+                <div>
+                  <Link to={"/signup"} className="getStarted">Get Started!</Link>
+                  <button onClick={login} className="demoButton">Demo App</button>
+                </div>
+                :
+
+                <div>
+                  <Link to={"/createentry"} className ="getStarted">Create Entry</Link>
+                  <Link to={"/entries"} className ="viewEntries">View Entries</Link>
+                </div>
+              }
+              
             </div>
           </div>
         </div>

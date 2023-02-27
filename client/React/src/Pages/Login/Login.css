@@ -1,4 +1,4 @@
-.signupForm {
+.Form {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -9,41 +9,40 @@
     background-size: cover;
 }
 
-.form {
-    /* text-align: center; */
+.form1 h1 {
+    font-size: 35px;
+    padding-bottom: 15px;
+    /* color: white; */
+}
+
+.form1 {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
     margin: auto;
-    padding: 100px 100px;
+    padding: 150px 100px;
     border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
 }
 
-.form h1 {
-    font-size: 35px;
-    padding-bottom: 15px;
-}
-
-.label {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 10px;
+.form1 input ,.form1 button{
     width: 250px;
-    height: 35px;
-    border: 1px solid #800020;
-}
-
-.signUpButtons button {
-    width: 80px;
     height: 35px;
     margin: 5px 0px;
     outline: none;
     border: 1px solid #800020;
     font-size: 20px;
-    margin: 5px;
+}
+
+.form1 button {
     cursor: pointer;
+}
+
+.linkToSignup {
+    padding-top:15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
 }

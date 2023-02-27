@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-// import './Login.css'
+import './Login.css'
 
 function LoginPage() {
   const auth = useAuth();  //from authcontext
@@ -10,7 +10,7 @@ function LoginPage() {
   const [data, setData] = useState({ email: "", password: "" });  // state with username and password
   const [error, setError] = useState(false);     //if there is an error
 
-  // const from = location.state?.from?.pathname || "/";   //gets current location so when you login it takes the user where they were before
+  const from = location.state?.from?.pathname || "/";   //gets current location so when you login it takes the user where they were before
 
   const fieldChanged = (name) => {   //updates the setData state that has the email and password
     return (event) => {
@@ -36,49 +36,49 @@ function LoginPage() {
   let errorMessage = "";
   if (error) {
     errorMessage = (
-      <div className="alert alert-danger" role="alert">
+      <div role="alert">
         Login Failed
       </div>
     );
   }
 
   return (
-    <div className="container">
-      <div className="Form">
-        <form className="form1"  onSubmit={login}>
-          <h1 className="heading">Login</h1>
-            {errorMessage}
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              placeholder="Email"
-              value={data.email}
-              onChange={fieldChanged("email")}
-            />
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              placeholder="Password"
-              value={data.password}
-              onChange={fieldChanged("password")}
-            />
-            <button type="submit" className="login-button">
-              Login
-            </button>
-          {/* <div className="social">
-            <div className="go"><i className="fab fa-google"></i> Google</div>
-            <div className="fb"><i className="fab fa-facebook"></i> Facebook</div>
-          </div> */}
-          <div className="linkToSignup">
-            <p>Need an account?</p>
-            <Link to={"/signup"}>Signup</Link>
-          </div>
+    // <div className="container">
+        <div className="Form">
+          <form className="form1"  onSubmit={login}>
+            <h1>Welcome Back!</h1>
+              {errorMessage}
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Email"
+                value={data.email}
+                onChange={fieldChanged("email")}
+              />
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={data.password}
+                onChange={fieldChanged("password")}
+              />
+              <button type="submit" className="login-button">
+                Login
+              </button>
+            {/* <div className="social">
+              <div className="go"><i className="fab fa-google"></i> Google</div>
+              <div className="fb"><i className="fab fa-facebook"></i> Facebook</div>
+            </div> */}
+            <div className="linkToSignup">
+              <p>Need an account?</p>
+              <Link to={"/signup"}>Signup</Link>
+            </div>
 
-        </form>
-      </div>
-    </div>
+          </form>
+        </div>
+      
   );
 }
 

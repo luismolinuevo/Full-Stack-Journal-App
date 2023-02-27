@@ -18,6 +18,7 @@ import { Signup } from "./Pages/Signup/Signup";
 import CreateEntrie from "./Pages/Entries/CreateEntrie";
 import ShowEntries from "./Pages/Entries/ShowEntries";
 import SpecEntrie from "./Pages/Entries/SpecEntrie";
+import PrivateRouteRequiresAuth from "./components/PrivateRouteRequiresAuth";
 
 function App() {
 
@@ -29,21 +30,18 @@ function App() {
           {
             path: "/",
             element: <Home />,
-            // loader: () => {
-            //   return getDailyImage();
-            // }
           },
           {
             path: "/createentry",
-            element: <CreateEntrie/>
+            element: <PrivateRouteRequiresAuth><CreateEntrie/></PrivateRouteRequiresAuth>
           },
           {
             path: "/entries",
-            element: <ShowEntries/>
+            element: <PrivateRouteRequiresAuth><ShowEntries/></PrivateRouteRequiresAuth>
           },
           {
             path: "entries/:id",
-            element: <SpecEntrie/>
+            element: <PrivateRouteRequiresAuth><SpecEntrie/></PrivateRouteRequiresAuth>
           }
 
         ]

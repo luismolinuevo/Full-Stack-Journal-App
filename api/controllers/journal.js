@@ -62,7 +62,12 @@ router.delete("/:id", async (req,res) => {
 
     await Journal.deleteOne({
         _id: entryId,
+        userId: req.session.user._id
     })
+
+    res.status(200).json({
+        success: true
+    });
 })
 
 module.exports = router;

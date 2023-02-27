@@ -2,11 +2,12 @@
     display: flex;
     padding: 40px 100px;
     flex-wrap: wrap;
+    word-wrap:break-word;
 }
 
 .card {
     width: 250px;
-    height: 200px;
+    height: 250px;
     background-color: white;
     margin: 30px;
     border-radius: 8px;
@@ -39,3 +40,4 @@
     color: white;
     padding: 5px;
 }
+

@@ -71,24 +71,24 @@ export default function CreateEntrie() {
                         <div className = {mood.includes("rad ") ? "moods selected" : "moods"}>
                             <button onClick={() => moodHandler("rad ")}
                             >
-                                <BsEmojiSmile/>
+                                <BsEmojiSmile className="moodButton"/>
                             </button>
                             <p>rad</p>
                         </div>
                         <div className = {mood.includes("love ") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("love ")}><BsEmojiHeartEyes/></button> 
+                            <button onClick={() => moodHandler("love ")}><BsEmojiHeartEyes className="moodButton"/></button> 
                             <p>love</p>
                         </div>
                         <div className = {mood.includes("meh ") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("meh ")}><BsEmojiNeutral/></button>
+                            <button onClick={() => moodHandler("meh ")}><BsEmojiNeutral className="moodButton"/></button>
                             <p>meh</p>
                         </div>
                         <div className = {mood.includes("sad ") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("sad ")}><BsEmojiFrown/></button> 
+                            <button onClick={() => moodHandler("sad ")}><BsEmojiFrown className="moodButton"/></button> 
                             <p>sad</p>
                         </div>
                         <div className = {mood.includes("mad ") ? "moods selected" : "moods"}>
-                            <button onClick={() => moodHandler("mad ")}><BsEmojiAngry/></button> 
+                            <button onClick={() => moodHandler("mad ")}><BsEmojiAngry className="moodButton"/></button> 
                             <p>mad</p>
                         </div>
                     </div>
@@ -100,12 +100,12 @@ export default function CreateEntrie() {
             </div>
             <form onSubmit={sumbitForm} className="bottomHalf">
                 <div>
-                    <h1 className='entrieHeading'>Explain your mood</h1>
-                    <textarea type="text" value={explainMood} placeholder='Explain your selected mood' className='explainMood' onChange={event => {setExplainMood(event.target.value)}}/>
+                    <h1 className='entrieHeading2'>Explain your mood</h1>
+                    <textarea type="text" value={explainMood} placeholder='Explain your selected mood' className='textarea' onChange={event => {setExplainMood(event.target.value)}}/>
                 </div>
                 <div>
-                    <h1 className='entrieHeading'>What happened Today?</h1>
-                    <textarea type="text" value={whatHappened} placeholder='What happened Today?' className='whatHappened' onChange={event => {setWhatHappened(event.target.value)}}/>
+                    <h1 className='entrieHeading2'>What happened Today?</h1>
+                    <textarea type="text" value={whatHappened} placeholder='What happened Today?' className='textarea' onChange={event => {setWhatHappened(event.target.value)}}/>
                 </div>
                 <button type="submit" className='submitButton'>Submit</button>
             </form>

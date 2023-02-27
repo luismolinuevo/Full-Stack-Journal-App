@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import "../Entries/Entries.css";
+import { AiFillDelete } from "react-icons/ai";
 
 export default function ({data}) {
   return (
@@ -13,7 +14,9 @@ export default function ({data}) {
                 <h1>{item.title}</h1>
                 <h3>{item.date}</h3>
                 <p>Mood: {item.mood}</p>
-                <Link to={`/entries/${item._id}`}>View More</Link>
+                <div>
+                  <Link to={`/entries/${item._id}`}>View More</Link>
+                </div>
               </div>
             </div>  
             ))}

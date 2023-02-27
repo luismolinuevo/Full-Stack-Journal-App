@@ -1,11 +1,14 @@
 import { useState, useEffect }from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import "../Entries/SpecEntrie.css"
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+
 
 export default function SpecEntrie() {
     const [entrieData, setEntrieData] = useState([]);
     let params = useParams();
     const [error, setError] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getEntrieData() {
@@ -34,8 +37,22 @@ export default function SpecEntrie() {
         };
       }, [params]);
 
+      const deleteEntry = (e) => {
+        let response = fetch(`http://localhost:5000/api/journal/${params.id}`, {
+          method: "DELETE",
+          credentials: "include",
+          headers: {
+          "Content-Type": "application/json",
+          },
+        }).then(navigate(`/workouts`))
+        if (response.ok) {
+          console("Entry deleted")
+        } else {
+          // setError(true);
+          console.log("didnt work")
+        }
       
-      console.log(entrieData);
+      }
 
   return (
     <div>
@@ -58,6 +75,10 @@ export default function SpecEntrie() {
                     <p>{data.entry}</p>
                   </div>
                 </div>
+                <div className='editandelbutton'>
+                  <button className="deleteButton" title="delete entry" onClick={deleteEntry}><AiFillDelete className='trashCan'/>Delete Entry</button>
+                  {/* <button className='editButton' title="edit entry"><AiFillEdit className='editIcon'/>Edit Entry</button> */}
+                </div> 
               </div>
             )
               

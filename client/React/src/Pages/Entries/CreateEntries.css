@@ -1,6 +1,6 @@
 .topHalf {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 15px 0px;
 }
 
@@ -9,10 +9,14 @@
     text-align: center;
 }
 
+.datePicker input {
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
+}
+
 .moodPicker {
-    /* display: flex; */
     text-align: center;
-    
 }
 
 .moodEmjois {
@@ -21,10 +25,10 @@
 
 .moodEmjois p {
     font-family: 'Solitreo', cursive;
+    font-size: 25px;
 }
 
 .moods {
-    /* padding-left: 10px; */
     margin-left: 10px;
     text-align: center;
 }
@@ -36,12 +40,18 @@
     text-align: center;
 }
 
-.titleContainer {
-    /* display: flex; */
-    /* justify-content: center; */
-    text-align: center;
+.moodButton {
+    font-size: 40px;
+}
 
-    
+.titleContainer {
+    text-align: center;
+}
+
+.titleContainer input {
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
 }
 
 .selected {
@@ -54,20 +64,13 @@
     text-align: center;
 }
 
-.explainMood {
-    width: 275px;
-    height: 80px;
+.textarea {
+    width: 600px;
+    height: 200px;
     border-radius: 8px;
     font-family: 'Solitreo', cursive;
-    border: none;
-}
-
-.whatHappened {
-    width: 275px;
-    height: 80px;
-    border-radius: 8px;
-    font-family: 'Solitreo', cursive;
-    border: none;
+    border: 1px solid #800020;
+    font-size: 25px;
 }
 
 .inputBox {
@@ -80,14 +83,23 @@
 }
 
 .entrieHeading {
-    font-size: 23px;
+    font-size: 30px;
     padding-bottom: 5px;
 }
+
+.entrieHeading2 {
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
 
 .submitButton {
     background:#800020;
     border: none;
     cursor: pointer;
     color: white;
-    padding: 8px;
+    padding: 20px;
+    margin: 15px;
+    font-size: 15px;
+    border-radius: 8px;
 }

@@ -29,7 +29,7 @@ export default function CreateEntrie() {
 
     const sumbitForm = async (event) => {
         event.preventDefault();
-        let response = await fetch(API_URL, {
+        let response = await fetch(`${API_URL}/api/journal`, {
             method: "POST",
             credentials: "include",
             headers: {

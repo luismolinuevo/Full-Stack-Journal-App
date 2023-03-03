@@ -11,6 +11,7 @@ export default function ShowEntries() {
             try {
                 let response = await fetch(`${API_URL}/api/journal`, {
                     // credentials: "include", 
+                    mode: 'no-cors',  
                 })
 
                 if (!response.ok) {  //may have to change this

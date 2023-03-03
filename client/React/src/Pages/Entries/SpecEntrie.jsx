@@ -15,6 +15,7 @@ export default function SpecEntrie() {
           try {
             let response = await fetch(`${API_URL}/api/journal/${params.id}` , {
                 // credentials: "include"
+                mode: 'no-cors',  
             })
     
             let data = await response.json();

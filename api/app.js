@@ -14,9 +14,10 @@ const db = process.env.DB;
 //connects mongoose to mongodb database
 mongoose.set("strictQuery", false);
 mongoose.set('bufferCommands', false);
-mongoose.connect(db, () => {  //this is url is from my cluster that I connected from the cloud to my pc
-    // useNewUrlParser: true;
-    console.log("Connected to MongoDB");
+
+mongoose.connect(db);
+mongoose.connection.on('error', (err) => {
+  console.log(err);
 });
 
 

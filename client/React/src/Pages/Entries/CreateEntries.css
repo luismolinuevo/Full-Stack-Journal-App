@@ -103,3 +103,89 @@
     font-size: 15px;
     border-radius: 8px;
 }
+
+@media only screen and (max-width: 800px) {
+    .datePicker input, .titleContainer input {
+        width: 120px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .moodEmjois p {
+        font-size: 20px;
+    }
+    
+    .moodButton {
+        font-size: 35px;
+    }
+
+    .textarea {
+        width: 500px;
+        height: 150px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .topHalf {
+        flex-direction: column;
+    }
+
+    .moodPicker {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .textarea {
+        width: 340px;
+        height: 150px;
+    }
+
+    .entrieHeading2, .entrieHeading {
+        font-size: 30px;
+
+    }
+
+    .submitButton {
+        padding: 15px;
+        margin: 15px;
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    .textarea {
+        width: 230px;
+        height: 130px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .textarea {
+        width: 170px;
+        height: 130px;
+        font-size: 15px;
+    }
+
+    .entrieHeading2, .entrieHeading {
+        font-size: 25px;
+
+    }
+
+    .submitButton {
+        padding: 12px;
+        margin: 13px;
+        font-size: 10px;
+    }
+
+    .moodEmjois p {
+        font-size: 15px;
+    }
+    
+    .moodButton {
+        font-size: 25px;
+    }
+}

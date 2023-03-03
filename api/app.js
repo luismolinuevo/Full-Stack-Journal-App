@@ -25,7 +25,7 @@ app.use(morgan('tiny'));
 //middlewares
 app.use(     //protects from attacks. And makes things safer.
     cors({
-      origin: frontEnd, // <-- location of the react app were connecting to
+      // origin: frontEnd, // <-- location of the react app were connecting to
       methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
       credentials: true,
       

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
+const API_URL = import.meta.env.API_URL ||"http://localhost:5000";
+
 
 const AuthContext = createContext();        //makes the context
 const { Provider } = AuthContext;
@@ -9,7 +11,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     async function checkIfUserIsLoggedIn() {
       try {
-        let response = await fetch("http://localhost:5000/api/auth/login", {
+        let response = await fetch(`${API_URL}/api/auth/login`, {
           credentials: "include",
         })   
       
@@ -32,7 +34,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const authenticate = async (email, password) => {
-      let response = await fetch("http://localhost:5000/api/auth/login", {   //fetches from backend
+      let response = await fetch(`${API_URL}/api/auth/login`, {   //fetches from backend
       method: "POST",
       credentials: 'include',
       body: JSON.stringify({ email, password }),    //with the email and password
@@ -55,7 +57,7 @@ const AuthProvider = ({ children }) => {
 
 
   const signout = async () => {
-    let response = await fetch("http://localhost:5000/api/auth/logout", {  //calls logout route
+    let response = await fetch(`${API_URL}/api/auth/logout`, {  //calls logout route
       method: "POST",
       credentials: 'include',
       headers: {

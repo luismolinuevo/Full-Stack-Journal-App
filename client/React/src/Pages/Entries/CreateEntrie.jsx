@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/Bs";
+import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/bs";
 import "./CreateEntries.css"
 import { useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
 
 
 export default function CreateEntrie() {
@@ -28,7 +29,7 @@ export default function CreateEntrie() {
 
     const sumbitForm = async (event) => {
         event.preventDefault();
-        let response = await fetch(import.meta.env.VITE_CREATE_ENTRIE, {
+        let response = await fetch(API_URL, {
             method: "POST",
             credentials: "include",
             headers: {

@@ -33,18 +33,18 @@ function App() {
           },
           {
             path: "/createentry",
-            // element: <PrivateRouteRequiresAuth><CreateEntrie/></PrivateRouteRequiresAuth>
-            element: <CreateEntrie/>
+            element: <PrivateRouteRequiresAuth><CreateEntrie/></PrivateRouteRequiresAuth>
+            // element: <CreateEntrie/>
           },
           {
             path: "/entries",
-            // element: <PrivateRouteRequiresAuth><ShowEntries/></PrivateRouteRequiresAuth>
-            element: <ShowEntries/>
+            element: <PrivateRouteRequiresAuth><ShowEntries/></PrivateRouteRequiresAuth>
+            // element: <ShowEntries/>
           },
           {
             path: "entries/:id",
-            // element: <PrivateRouteRequiresAuth><SpecEntrie/></PrivateRouteRequiresAuth>
-            element: <SpecEntrie/>
+            element: <PrivateRouteRequiresAuth><SpecEntrie/></PrivateRouteRequiresAuth>
+            // element: <SpecEntrie/>
           }
 
         ]

@@ -6,6 +6,7 @@ import Axios from "axios";
 // import {Box} from "@mui/system";
 import './Signup.css';
 import { Link, useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ export const Signup = () => {
                   password: values.password,
                 },
                 withCredentials: true,
-                url: "http://localhost:5000/api/auth/signup",
+                url: `${API_URL}/api/auth/signup`,
               }).then((res) => console.log(res)).then(navigate("/"));
           }}
         >

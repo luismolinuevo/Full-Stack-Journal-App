@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Entries from './Entries';
 import "../Entries/ShowEntries.css"
-
+const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
 export default function ShowEntries() {
     const [entries, setEntries] = useState([]);
     const [query, setQuery] = useState([]);
@@ -9,7 +9,7 @@ export default function ShowEntries() {
     useEffect(() => {
         async function getAllEntries() {
             try {
-                let response = await fetch("http://localhost:5000/api/journal", {
+                let response = await fetch(`${API_URL}/api/journal`, {
                     credentials: "include", 
                 })
 

@@ -31,7 +31,7 @@ export default function CreateEntrie() {
         event.preventDefault();
         let response = await fetch(`${API_URL}/api/journal`, {
             method: "POST",
-            credentials: "include",
+            // credentials: "include",
             headers: {
             "Content-Type": "application/json",
         },

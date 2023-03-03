@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
   const authenticate = async (email, password) => {
       let response = await fetch(`${API_URL}/api/auth/login`, {   //fetches from backend
       method: "POST",
-      credentials: 'include',
+      // credentials: 'include',
       body: JSON.stringify({ email, password }),    //with the email and password
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
   const signout = async () => {
     let response = await fetch(`${API_URL}/api/auth/logout`, {  //calls logout route
       method: "POST",
-      credentials: 'include',
+      // credentials: 'include',
       headers: {
         "Content-Type": "application/json",
       },

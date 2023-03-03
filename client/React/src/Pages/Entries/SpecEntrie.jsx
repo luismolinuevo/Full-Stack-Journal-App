@@ -14,7 +14,7 @@ export default function SpecEntrie() {
         async function getEntrieData() {
           try {
             let response = await fetch(`${API_URL}/api/journal/${params.id}` , {
-                credentials: "include"
+                // credentials: "include"
             })
     
             let data = await response.json();

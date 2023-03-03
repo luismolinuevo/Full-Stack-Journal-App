@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-const API_URL = import.meta.env.API_URL ||"http://localhost:5000";
+const API_URL = import.meta.env.API_URL || "http://localhost:5000";
 
 
 const AuthContext = createContext();        //makes the context

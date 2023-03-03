@@ -5,26 +5,42 @@
 
 .searchBar {
     height: 60px;
-    width: 350px;
+    width: 330px;
     padding: 5px;
     border-radius: 5px;
     border: none;
     outline: none;
     font-size: 20px
 }
+@media only screen and (max-width: 800px) {
+    .searchBar {
+        height: 50px;
+        width: 275px;
+        font-size: 15px;
+    }
+
+}
 
 @media only screen and (max-width: 500px) {
     .searchBar {
         height: 50px;
-        width: 300px;
+        width: 250px;
         font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .searchBar {
+        height: 45px;
+        width: 220px;
+        font-size: 11px;
     }
 }
 
 @media only screen and (max-width: 300px) {
     .searchBar {
-        height: 45px;
-        width: 250px;
+        height: 40px;
+        width: 150px;
         font-size: 11px;
     }
 }

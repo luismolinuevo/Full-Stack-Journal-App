@@ -32,6 +32,7 @@ export default function CreateEntrie() {
         let response = await fetch(`${API_URL}/api/journal`, {
             method: "POST",
             // credentials: "include",
+            mode: 'no-cors',  
             headers: {
             "Content-Type": "application/json",
         },

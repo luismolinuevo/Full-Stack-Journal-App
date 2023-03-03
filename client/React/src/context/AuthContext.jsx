@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     async function checkIfUserIsLoggedIn() {
       try {
         let response = await fetch(`${API_URL}/api/auth/login`, {
-          credentials: "include",
+          // credentials: "include",
         })   
       
         if (!response.ok) {  //may have to change this

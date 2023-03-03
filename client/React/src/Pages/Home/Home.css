@@ -72,7 +72,7 @@
         font-size: 22px;
     }
 
-    .getStarted, .demoButton {
+    .getStarted, .demoButton,.viewEntries {
         padding: 14px;
         font-size: 13px;
         
@@ -94,7 +94,7 @@
         font-size: 18px;
     }
 
-    .getStarted, .demoButton {
+    .getStarted, .demoButton,.viewEntries {
         padding: 12px;
         font-size: 12px;
         
@@ -133,7 +133,7 @@
         font-size: 15px;
     }
 
-    .getStarted, .demoButton {
+    .getStarted, .demoButton,.viewEntries {
         padding: 8px;
         font-size: 12px;
         

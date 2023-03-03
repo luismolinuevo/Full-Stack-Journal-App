@@ -12,3 +12,19 @@
     outline: none;
     font-size: 20px
 }
+
+@media only screen and (max-width: 500px) {
+    .searchBar {
+        height: 50px;
+        width: 300px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .searchBar {
+        height: 45px;
+        width: 250px;
+        font-size: 11px;
+    }
+}

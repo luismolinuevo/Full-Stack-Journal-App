@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Entries from './Entries';
 import "../Entries/ShowEntries.css"
-const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
+const API_URL = import.meta.env.VITE_API_URL ||"http://localhost:5000"
 export default function ShowEntries() {
     const [entries, setEntries] = useState([]);
     const [query, setQuery] = useState([]);

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/bs";
 import "./CreateEntries.css"
 import { useNavigate } from "react-router-dom";
-const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
+const API_URL = import.meta.env.VITE_API_URL ||"http://localhost:5000"
 
 
 export default function CreateEntrie() {

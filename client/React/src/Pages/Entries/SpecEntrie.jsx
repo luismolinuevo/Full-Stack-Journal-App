@@ -2,7 +2,7 @@ import { useState, useEffect }from 'react';
 import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import "../Entries/SpecEntrie.css"
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-const API_URL = import.meta.env.API_URL ||"http://localhost:5000"
+const API_URL = import.meta.env.VITE_API_URL ||"http://localhost:5000"
 
 export default function SpecEntrie() {
     const [entrieData, setEntrieData] = useState([]);

@@ -34,7 +34,7 @@
     border: 1px solid #800020;
     padding: 17px;
     cursor: pointer;
-    margin: auto;
+    /* margin: auto; */
     font-size: 15px;
     font-weight: bold;
 }
@@ -48,4 +48,98 @@
     background-color: white;
     color:black;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1050px) {
+    #home {
+        padding-top: 150px;
+    }
+
+}
+
+@media only screen and (max-width: 790px) {
+    #home {
+        padding-top: 120px;
+    }
+
+    .homeMain h1 {
+        font-size: 55px;
+    }
+
+    .homeMain p {
+        /* font-family: 'Shadows Into Light', cursive; */
+        padding: 10px 0px;
+        font-size: 22px;
+    }
+
+    .getStarted, .demoButton {
+        padding: 14px;
+        font-size: 13px;
+        
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #home {
+        padding-top: 65px;
+    }
+
+    .homeMain h1 {
+        font-size: 45px;
+    }
+
+    .homeMain p {
+        /* font-family: 'Shadows Into Light', cursive; */
+        padding: 8px 0px;
+        font-size: 18px;
+    }
+
+    .getStarted, .demoButton {
+        padding: 12px;
+        font-size: 12px;
+        
+    }
+
+    .homeButtons {
+        padding:8px;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    #home {
+        padding-top: 50px;
+    }
+
+    .homeMain h1 {
+        font-size: 35px;
+    }
+
+    .homeMain p {
+        /* font-family: 'Shadows Into Light', cursive; */
+        padding: 8px 0px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .homeMain h1 {
+        font-size: 30px;
+    }
+
+    .homeMain p {
+        /* font-family: 'Shadows Into Light', cursive; */
+        padding: 6px 0px;
+        font-size: 15px;
+    }
+
+    .getStarted, .demoButton {
+        padding: 8px;
+        font-size: 12px;
+        
+    }
+
+    .homeButtons {
+        padding:8px;
+    }
 }

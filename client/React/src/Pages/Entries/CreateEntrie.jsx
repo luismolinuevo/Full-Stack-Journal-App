@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/Bs";
+import { BsEmojiSmile, BsEmojiHeartEyes, BsEmojiNeutral, BsEmojiFrown, BsEmojiAngry} from "react-icons/bs";
 import "./CreateEntries.css"
 import { useNavigate } from "react-router-dom";
 

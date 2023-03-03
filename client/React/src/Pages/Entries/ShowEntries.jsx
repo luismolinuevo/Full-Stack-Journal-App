@@ -10,7 +10,7 @@ export default function ShowEntries() {
         async function getAllEntries() {
             try {
                 let response = await fetch(`${API_URL}/api/journal`, {
-                    credentials: "include", 
+                    // credentials: "include", 
                 })
 
                 if (!response.ok) {  //may have to change this
